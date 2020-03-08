@@ -5,14 +5,11 @@
 # import modules
 import os
 import shutil
-import time
 from zipfile import ZipFile
 from os import path
-from shutil import make_archive
 
 from datetime import datetime, timedelta
 from pytz import timezone
-
 
 # import AWS modules
 import logging
@@ -48,18 +45,6 @@ def stamp_to_epoch(timestamp):
     sec = int(timestamp[17:19])
     epoch_seconds = int(datetime(year, month, day, hours, mins).strftime('%s'))
     return epoch_seconds
-
-# i = 0
-# for item in bucket.objects.all():
-#     if "Logic_Projects" in item.key:
-#         if ".zip" in item.key:
-#             # print('GMT time:')
-#             # print(s3Resource.Object(bucket_name, item.key).last_modified)
-#             utc_dt = s3Resource.Object(bucket_name, item.key).last_modified
-#             est_time = utc_to_est(utc_dt)
-#             s3_obj_lastmod_time_epoch = stamp_to_epoch(est_time)
-#             s3_obj_dict.update({item.key: s3_obj_lastmod_time_epoch})
-#             i += 1
 
 def getS3LastModEpoch(fileName):
     for item in bucket.objects.all():
