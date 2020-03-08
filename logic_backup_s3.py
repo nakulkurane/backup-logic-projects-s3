@@ -32,9 +32,6 @@ bucket_name = 'python-bucket-n' # NAME OF BUCKET GOES HERE, HARD CODED FOR NOW
 # CREATE BUCKET OBJECT FOR THE BUCKET OF CHOICE
 bucket = s3Resource.Bucket(bucket_name)
 
-# DICTIONARY TO STORE S3 KEYS AND LAST MODIFIED DATES
-s3_obj_dict = {}
-
 # Convert GMT to US/Eastern time zone
 # also converts from datetime datatype to string datatype for use in dictionary
 def utc_to_est(utc_dt):
