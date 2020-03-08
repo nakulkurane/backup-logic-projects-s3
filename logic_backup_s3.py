@@ -5,14 +5,11 @@
 # import modules
 import os
 import shutil
-import time
 from zipfile import ZipFile
 from os import path
-from shutil import make_archive
 
 from datetime import datetime, timedelta
 from pytz import timezone
-
 
 # import AWS modules
 import logging
@@ -32,9 +29,6 @@ bucket_name = 'python-bucket-n' # NAME OF BUCKET GOES HERE, HARD CODED FOR NOW
 # CREATE BUCKET OBJECT FOR THE BUCKET OF CHOICE
 bucket = s3Resource.Bucket(bucket_name)
 
-# DICTIONARY TO STORE S3 KEYS AND LAST MODIFIED DATES
-s3_obj_dict = {}
-
 # Convert GMT to US/Eastern time zone
 # also converts from datetime datatype to string datatype for use in dictionary
 def utc_to_est(utc_dt):
@@ -51,18 +45,6 @@ def stamp_to_epoch(timestamp):
     sec = int(timestamp[17:19])
     epoch_seconds = int(datetime(year, month, day, hours, mins).strftime('%s'))
     return epoch_seconds
-
-# i = 0
-# for item in bucket.objects.all():
-#     if "Logic_Projects" in item.key:
-#         if ".zip" in item.key:
-#             # print('GMT time:')
-#             # print(s3Resource.Object(bucket_name, item.key).last_modified)
-#             utc_dt = s3Resource.Object(bucket_name, item.key).last_modified
-#             est_time = utc_to_est(utc_dt)
-#             s3_obj_lastmod_time_epoch = stamp_to_epoch(est_time)
-#             s3_obj_dict.update({item.key: s3_obj_lastmod_time_epoch})
-#             i += 1
 
 def getS3LastModEpoch(fileName):
     for item in bucket.objects.all():
