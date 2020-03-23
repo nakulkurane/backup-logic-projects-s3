@@ -14,5 +14,5 @@ Compare files in a local folder with the respective files in S3 and zip and uplo
 Read the 2-part blog series below:
 <ul>
   <li><a href="https://medium.com/analytics-vidhya/backing-up-my-logic-pro-projects-to-aws-s3-part-1-671d408dd39c?source=friends_link&sk=a1330cb7d10d45f48226960f4a955b99">Part 1</a></li>
-<li><a href="https://medium.com/analytics-vidhya/backing-up-my-logic-pro-projects-to-aws-s3-part-1-671d408dd39c?source=friends_link&sk=a1330cb7d10d45f48226960f4a955b99">Part 2</a></li>
+<li><a href="https://medium.com/@nakulkurane/backing-up-my-logic-pro-projects-to-aws-s3-part-2-bf454191379e?source=friends_link&sk=4a854e57c5858cf44ab3b0b57b67204b">Part 2</a></li>
   </ul>
